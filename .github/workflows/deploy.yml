@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           source: "app/,.github/"
-          target: "/opt/itwasjacob/dynamic-bio/"
+          target: "/opt/itwasjacob/makerpass/"
           
       - name: SSH and restart
         uses: appleboy/ssh-action@master
@@ -37,7 +37,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # Navigate to application directory
-            cd /opt/itwasjacob/dynamic-bio/app
+            cd /opt/itwasjacob/makerpass/app
             
             # Restart the application
             docker compose down
