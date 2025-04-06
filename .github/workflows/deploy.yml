@@ -13,12 +13,12 @@ jobs:
       
       - name: Create .env file
         run: |
-          echo "PORT=3000" > app/.env
-          echo "FIRECRAWL_API_KEY=${{ secrets.FIRECRAWL_API_KEY }}" >> app/.env
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> app/.env
-          echo "DEFAULT_BIO_TONE=professional" >> app/.env
-          echo "DEFAULT_BIO_MAX_LENGTH=500" >> app/.env
-          echo "DEFAULT_BIO_NAME=Jacob Edgar-Anderson" >> app/.env
+          echo "PORT=3000" > .env
+          echo "FIRECRAWL_API_KEY=${{ secrets.FIRECRAWL_API_KEY }}" >> .env
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> .env
+          echo "DEFAULT_BIO_TONE=professional" >> .env
+          echo "DEFAULT_BIO_MAX_LENGTH=500" >> .env
+          echo "DEFAULT_BIO_NAME=Jacob Edgar-Anderson" >> .env
           
       - name: Deploy to Server
         uses: appleboy/scp-action@master
@@ -26,8 +26,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          source: "app/,.github/"
-          target: "/opt/itwasjacob/makerpass/"
+          source: "./*"
+          target: "/opt/itwasjacob/Makerpass/"
           
       - name: SSH and restart
         uses: appleboy/ssh-action@master
@@ -37,7 +37,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # Navigate to application directory
-            cd /opt/itwasjacob/makerpass/app
+            cd /opt/itwasjacob/Makerpass
             
             # Restart the application
             docker compose down

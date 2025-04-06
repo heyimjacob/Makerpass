@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./config/nginx:/etc/nginx/conf.d
+      - ./config/ssl:/etc/nginx/ssl
+      - ./config/letsencrypt:/etc/letsencrypt
+    networks:
+      - itwasjacob-network
+    restart: unless-stopped
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./config/letsencrypt:/etc/letsencrypt
+      - ./config/ssl:/etc/nginx/ssl
+    command: certonly --webroot --webroot-path=/var/www/certbot --email=your-email@example.com --agree-tos --no-eff-email -d itwasjacob.com -d marcus.itwasjacob.com -d blog.itwasjacob.com
+
+networks:
+  itwasjacob-network:
+    driver: bridge 
