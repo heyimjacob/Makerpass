@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <meta name="description" content="<%= bio.substring(0, 160) %>">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><%= title %></h1>
+    </header>
+
+    <main>
+      <section class="bio-section">
+        <h2>Bio</h2>
+        <div class="bio-content">
+          <p><%= bio %></p>
+          <small class="last-updated">Last updated: <%= lastUpdated %></small>
+        </div>
+      </section>
+
+      <section class="links-section">
+        <h2>Links</h2>
+        <% if (links && links.length > 0) { %>
+          <ul class="links-list">
+            <% links.forEach(function(link) { %>
+              <li class="link-item">
+                <a href="<%= link.url %>" target="_blank" rel="noopener noreferrer">
+                  <h3><%= link.title %></h3>
+                  <p class="link-date">Added on <%= new Date(link.dateAdded).toLocaleDateString() %></p>
+                </a>
+              </li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p class="no-links">No links available yet.</p>
+        <% } %>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <%= new Date().getFullYear() %> <%= title %>. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html> 

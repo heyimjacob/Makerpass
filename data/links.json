@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://alitu.com",
+    "title": "alitu.com",
+    "contentSummary": "This is a mock content summary for https://alitu.com. In production, this would be actual scraped content from the webpage.",
+    "metadata": {
+      "scrapeDate": "2025-04-06T13:48:24.574Z",
+      "contentType": "webpage",
+      "wordCount": 100,
+      "links": [],
+      "images": []
+    },
+    "commentary": "I am the Head of Growth and have been for the past 5 years. This is my day job.",
+    "id": "1743947304575",
+    "dateAdded": "2025-04-06T13:48:24.575Z",
+    "scrapeDate": "2025-04-06T13:48:24.575Z"
+  }
+]

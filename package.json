@@ -1,0 +1,35 @@
+{
+  "name": "makerpass",
+  "version": "1.0.0",
+  "description": "A dynamic bio generator that evolves with your content",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "add-link": "node cli.js add-link",
+    "remove-link": "node cli.js remove-link",
+    "list-links": "node cli.js list-links",
+    "show-bio": "node cli.js show-bio",
+    "generate-bio": "node cli.js generate-bio",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jacob Edgar-Anderson",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firecrawl": "^1.15.0",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "bin": {
+    "biocli": "./cli.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 
