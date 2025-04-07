@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  dynamic-bio-website:
+    build: .
+    container_name: dynamic-bio-website
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - /opt/itwasjacob/dynamic-bio/data:/app/data
+    restart: unless-stopped
+
+volumes:
+  bio_data:
+    name: bio_website_data 
