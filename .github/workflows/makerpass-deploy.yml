@@ -1,5 +1,8 @@
 name: Build and Deploy Makerpass
 
+# Workflow for building and deploying Makerpass application
+# Updated: 2024-04-07
+
 on:
   push:
     branches: [ main ]
