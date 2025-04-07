@@ -1,0 +1,15 @@
+Welcome to ItWasJacob.com!
+
+The central nodule. This is the ever improving local command centre. 
+
+In here there are small modules for itwasjacob.com. 
+
+<rules>
+
+Documentation is crucial, document:
+* Scripts
+* Architecture
+* Decisions (in /log/decisions)
+* Updates (in /log/updates)
+
+</rules>
